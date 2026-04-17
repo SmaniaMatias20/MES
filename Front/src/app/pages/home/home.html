@@ -117,24 +117,42 @@
     <div class="max-w-7xl mx-auto">
         <h2 class="text-4xl font-bold mb-12 text-sky-300">Proyectos</h2>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="p-8 rounded-2xl bg-slate-800 border border-white/5">
-                <h3 class="text-xl font-semibold mb-4 text-emerald-400">
-                    Sistema de gestión
-                </h3>
-                <p class="text-slate-300">
-                    Plataforma desarrollada en C# y SQL Server para control financiero.
-                </p>
+        <div class="relative">
+            <!-- izquierda -->
+            <button (click)="prev()"
+                class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-slate-800/80 hover:bg-slate-700 p-3 rounded-full">
+                <span class="material-icons">
+                    arrow_back
+                </span>
+            </button>
+
+            <!-- viewport -->
+            <div class="overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out" [style.transform]="transformValue">
+
+                    @for (proyecto of proyectos; track proyecto.titulo) {
+                    <div class="w-1/2 flex-shrink-0 p-4">
+                        <div class="p-8 rounded-2xl bg-slate-800 border border-white/5 h-full">
+                            <h3 class="text-xl font-semibold mb-4" [class]="proyecto.color">
+                                {{ proyecto.titulo }}
+                            </h3>
+                            <p class="text-slate-300">
+                                {{ proyecto.descripcion }}
+                            </p>
+                        </div>
+                    </div>
+                    }
+
+                </div>
             </div>
 
-            <div class="p-8 rounded-2xl bg-slate-800 border border-white/5">
-                <h3 class="text-xl font-semibold mb-4 text-sky-300">
-                    Landing empresarial
-                </h3>
-                <p class="text-slate-300">
-                    Sitio corporativo moderno para consultora de recursos humanos.
-                </p>
-            </div>
+            <!-- derecha -->
+            <button (click)="next()"
+                class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-slate-800/80 hover:bg-slate-700 p-3 rounded-full">
+                <span class="material-icons">
+                    arrow_forward
+                </span>
+            </button>
         </div>
     </div>
 </section>
@@ -152,36 +170,66 @@
             optimización de sistemas y mejora de rendimiento.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-2xl bg-slate-800 border border-white/5 hover:border-sky-400/20 transition">
-                <h3 class="text-xl font-semibold mb-3 text-emerald-400">
-                    Nombre Empresa 1
-                </h3>
-                <p class="text-slate-300 leading-relaxed">
-                    Desarrollo de landing pages corporativas, mejoras frontend y
-                    optimización de experiencia de usuario.
-                </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+            <!-- Empresa 1 -->
+            <div
+                class="rounded-2xl overflow-hidden bg-slate-800 border border-white/5 hover:border-sky-400/20 transition shadow-lg max-w-md mx-auto">
+
+                <div class="flex items-center justify-center w-full bg-white">
+                    <img src="assets/images/dmd.png" alt="DMD Compresores SAIC" class="w-52 h-52 object-contain" />
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-3 text-emerald-400">
+                        DMD Compresores SAIC
+                    </h3>
+
+                    <p class="text-slate-300 leading-relaxed">
+                        Desarrollo Fullstack, utilizando React, Tailwind CSS, Node, Redis, Docker.
+                        Base de datos PostgreSQL.
+                    </p>
+
+                    <p class="text-gray-500 leading-relaxed mt-2">
+                        Inicio: Agosto 2024 - Presente.
+                    </p>
+
+                    <a href="https://www.solucionesdmd.com/" target="_blank" rel="noopener noreferrer"
+                        class="inline-block mt-3 text-sky-400 hover:text-sky-300 transition">
+                        Ver sitio web →
+                    </a>
+                </div>
             </div>
 
-            <div class="p-8 rounded-2xl bg-slate-800 border border-white/5 hover:border-emerald-400/20 transition">
-                <h3 class="text-xl font-semibold mb-3 text-sky-300">
-                    Nombre Empresa 2
-                </h3>
-                <p class="text-slate-300 leading-relaxed">
-                    Desarrollo backend, APIs REST y administración de bases de datos
-                    para procesos internos.
-                </p>
+            <!-- Empresa 2 -->
+            <div
+                class="rounded-2xl overflow-hidden bg-slate-800 border border-white/5 hover:border-emerald-400/20 transition shadow-lg max-w-md mx-auto">
+
+                <div class="flex items-center justify-center w-full bg-white">
+                    <img src="assets/images/draltek.png" alt="Draltek" class="w-52 h-52 object-contain" />
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-3 text-sky-300">
+                        Draltek
+                    </h3>
+
+                    <p class="text-slate-300 leading-relaxed">
+                        Desarrollo Fullstack, utilizando PHP, HTML, CSS y JavaScript.
+                        Base de datos MySQL.
+                    </p>
+
+                    <p class="text-gray-500 leading-relaxed mt-2">
+                        Inicio: Diciembre 2025 - Presente.
+                    </p>
+
+                    <a href="https://draltek.com/" target="_blank" rel="noopener noreferrer"
+                        class="inline-block mt-3 text-emerald-400 hover:text-emerald-300 transition">
+                        Ver sitio web →
+                    </a>
+                </div>
             </div>
 
-            <div class="p-8 rounded-2xl bg-slate-800 border border-white/5 hover:border-sky-400/20 transition">
-                <h3 class="text-xl font-semibold mb-3 text-emerald-400">
-                    Nombre Empresa 3
-                </h3>
-                <p class="text-slate-300 leading-relaxed">
-                    Implementación de soluciones web a medida y mantenimiento
-                    evolutivo de plataformas existentes.
-                </p>
-            </div>
         </div>
     </div>
 </section>
