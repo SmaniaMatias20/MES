@@ -1,0 +1,58 @@
+<nav class="w-full fixed top-0 left-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+        <!-- Logo -->
+        <a routerLink="/" class="flex items-center gap-3 group">
+            <img src="assets/images/MES.png" alt="MES"
+                class="h-20 w-auto transition-transform duration-300 group-hover:scale-105" />
+            <span class="text-xl font-bold tracking-widest text-white"> MES </span>
+            <span class="hidden lg:block text-sm text-gray-400 font-light">
+                Software Solutions
+            </span>
+        </a>
+
+        <!-- Desktop menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#inicio" class="text-gray-300 hover:text-white transition">
+                Inicio
+            </a>
+            <a href="#servicios" class="text-gray-300 hover:text-white transition">
+                Servicios
+            </a>
+            <a href="#proyectos" class="text-gray-300 hover:text-white transition">
+                Proyectos
+            </a>
+            <a href="#contacto" class="text-gray-300 hover:text-white transition">
+                Contacto
+            </a>
+        </div>
+
+        <!-- CTA -->
+        <a href="#contacto"
+            class="hidden md:inline-flex px-5 py-2 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition">
+            Trabajemos juntos
+        </a>
+
+        <!-- Mobile button -->
+        <button class="md:hidden text-white" (click)="toggleMenu()" aria-label="Abrir menú">
+            <span class="text-3xl">
+                {{ isMenuOpen ? '✕' : '☰' }}
+            </span>
+        </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="md:hidden overflow-hidden transition-all duration-300 bg-black/95" [class.max-h-0]="!isMenuOpen"
+        [class.max-h-96]="isMenuOpen">
+        <div class="flex flex-col px-6 py-4 space-y-4 text-white">
+            <a href="#inicio" (click)="closeMenu()">Inicio</a>
+            <a href="#servicios" (click)="closeMenu()">Servicios</a>
+            <a href="#proyectos" (click)="closeMenu()">Proyectos</a>
+            <a href="#contacto" (click)="closeMenu()">Contacto</a>
+
+            <a href="#contacto" class="text-center px-4 py-3 rounded-xl bg-white text-black font-semibold"
+                (click)="closeMenu()">
+                Solicitar presupuesto
+            </a>
+        </div>
+    </div>
+</nav>
