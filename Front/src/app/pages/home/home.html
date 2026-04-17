@@ -132,13 +132,24 @@
 
                     @for (proyecto of proyectos; track proyecto.titulo) {
                     <div class="w-1/2 flex-shrink-0 p-4">
-                        <div class="p-8 rounded-2xl bg-slate-800 border border-white/5 h-full">
-                            <h3 class="text-xl font-semibold mb-4" [class]="proyecto.color">
-                                {{ proyecto.titulo }}
-                            </h3>
-                            <p class="text-slate-300">
-                                {{ proyecto.descripcion }}
-                            </p>
+                        <div class="rounded-2xl overflow-hidden bg-slate-800 border border-white/5 h-full shadow-lg">
+
+                            <!-- Imagen superior -->
+                            <div class="w-full h-56">
+                                <img [src]="proyecto.imagen" [alt]="proyecto.titulo"
+                                    class="w-full h-full object-cover" />
+                            </div>
+
+                            <!-- Contenido -->
+                            <div class="p-8">
+                                <h3 class="text-xl font-semibold mb-4" [class]="proyecto.color">
+                                    {{ proyecto.titulo }}
+                                </h3>
+
+                                <p class="text-slate-300 leading-relaxed">
+                                    {{ proyecto.descripcion }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                     }
@@ -177,7 +188,8 @@
                 class="rounded-2xl overflow-hidden bg-slate-800 border border-white/5 hover:border-sky-400/20 transition shadow-lg max-w-md mx-auto">
 
                 <div class="flex items-center justify-center w-full bg-white">
-                    <img src="assets/images/dmd.png" alt="DMD Compresores SAIC" class="w-52 h-52 object-contain" />
+                    <img src="assets/images/companies/dmd.png" alt="DMD Compresores SAIC"
+                        class="w-52 h-52 object-contain" />
                 </div>
 
                 <div class="p-6">
@@ -206,7 +218,7 @@
                 class="rounded-2xl overflow-hidden bg-slate-800 border border-white/5 hover:border-emerald-400/20 transition shadow-lg max-w-md mx-auto">
 
                 <div class="flex items-center justify-center w-full bg-white">
-                    <img src="assets/images/draltek.png" alt="Draltek" class="w-52 h-52 object-contain" />
+                    <img src="assets/images/companies/draltek.png" alt="Draltek" class="w-52 h-52 object-contain" />
                 </div>
 
                 <div class="p-6">

@@ -14,22 +14,20 @@ export class Home {
     {
       titulo: 'Sistema de gestión',
       descripcion: 'Plataforma desarrollada en C# y SQL Server para control financiero.',
-      color: 'text-emerald-400'
+      color: 'text-emerald-400',
+      imagen: 'assets/images/proyecto-gestion.jpg'
     },
     {
       titulo: 'Landing empresarial',
       descripcion: 'Sitio corporativo moderno para consultora de recursos humanos.',
-      color: 'text-sky-300'
+      color: 'text-sky-300',
+      imagen: 'assets/images/proyecto-landing.jpg'
     },
     {
       titulo: 'Registro de materias',
       descripcion: 'Aplicación en Python con SQLite para seguimiento académico.',
-      color: 'text-purple-300'
-    },
-    {
-      titulo: 'Simulador financiero',
-      descripcion: 'Simulador de plazo fijo y cotización en Java.',
-      color: 'text-pink-300'
+      color: 'text-purple-300',
+      imagen: 'assets/images/proyecto-materias.jpg'
     }
   ];
 
