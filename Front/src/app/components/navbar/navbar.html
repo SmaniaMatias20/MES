@@ -12,25 +12,26 @@
 
         <!-- Desktop menu -->
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#inicio" class="text-gray-300 hover:text-white transition">
+            <a (click)="scrollToSection('inicio')" class="cursor-pointer text-gray-300 hover:text-white transition">
                 Inicio
             </a>
-            <a href="#servicios" class="text-gray-300 hover:text-white transition">
+
+            <a (click)="scrollToSection('services')" class="cursor-pointer text-gray-300 hover:text-white transition">
                 Servicios
             </a>
-            <a href="#proyectos" class="text-gray-300 hover:text-white transition">
+
+            <a (click)="scrollToSection('projects')" class="cursor-pointer text-gray-300 hover:text-white transition">
                 Proyectos
             </a>
-            <a href="#contacto" class="text-gray-300 hover:text-white transition">
-                Contacto
+
+            <a (click)="scrollToSection('academic')" class="cursor-pointer text-gray-300 hover:text-white transition">
+                Formación
+            </a>
+
+            <a (click)="scrollToSection('companies')" class="cursor-pointer text-gray-300 hover:text-white transition">
+                Empresas
             </a>
         </div>
-
-        <!-- CTA -->
-        <a href="#contacto"
-            class="hidden md:inline-flex px-5 py-2 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition">
-            Trabajemos juntos
-        </a>
 
         <!-- Mobile button -->
         <button class="md:hidden text-white" (click)="toggleMenu()" aria-label="Abrir menú">
@@ -44,15 +45,11 @@
     <div class="md:hidden overflow-hidden transition-all duration-300 bg-black/95" [class.max-h-0]="!isMenuOpen"
         [class.max-h-96]="isMenuOpen">
         <div class="flex flex-col px-6 py-4 space-y-4 text-white">
-            <a href="#inicio" (click)="closeMenu()">Inicio</a>
-            <a href="#servicios" (click)="closeMenu()">Servicios</a>
-            <a href="#proyectos" (click)="closeMenu()">Proyectos</a>
-            <a href="#contacto" (click)="closeMenu()">Contacto</a>
-
-            <a href="#contacto" class="text-center px-4 py-3 rounded-xl bg-white text-black font-semibold"
-                (click)="closeMenu()">
-                Solicitar presupuesto
-            </a>
+            <a [routerLink]="['/']" fragment="inicio" (click)="closeMenu('inicio')">Inicio</a>
+            <a [routerLink]="['/']" fragment="services" (click)="closeMenu('services')">Servicios</a>
+            <a [routerLink]="['/']" fragment="projects" (click)="closeMenu('projects')">Proyectos</a>
+            <a [routerLink]="['/']" fragment="academic" (click)="closeMenu('academic')">Formación</a>
+            <a [routerLink]="['/']" fragment="companies" (click)="closeMenu('companies')">Empresas</a>
         </div>
     </div>
 </nav>

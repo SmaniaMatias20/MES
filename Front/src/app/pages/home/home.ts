@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { Services } from '../../sections/services/services';
-import { Technologies } from '../../sections/technologies/technologies';
 import { Projects } from '../../sections/projects/projects';
 import { Companies } from '../../sections/companies/companies';
 import { Academic } from '../../sections/academic/academic';
 
 @Component({
   selector: 'app-home',
-  imports: [Services, Technologies, Projects, Companies, Academic],
+  imports: [Services, Projects, Companies, Academic],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
