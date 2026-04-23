@@ -14,6 +14,7 @@ export class Academic {
   academic = [
     {
       title: 'Tecnicatura Universitaria en Programación',
+      university: 'Universidad Tecnológica Nacional (UTN)',
       description:
         'Formación universitaria orientada al desarrollo de software, bases de datos, arquitectura de sistemas, análisis de datos y gestión de proyectos.',
       period: '2023 - 2025',
@@ -21,6 +22,7 @@ export class Academic {
       subjects: [
         'Arquitectura y Sistemas Operativos',
         'Base de Datos I',
+        'Sistema de Procesamiento de Datos',
         'Inglés I',
         'Matemática',
         'Organización Empresarial',
@@ -41,6 +43,7 @@ export class Academic {
     },
     {
       title: 'Licenciatura en Ciencia de Datos',
+      university: 'Universidad de la Ciudad de Buenos Aires (UNICABA)',
       description:
         'Formación avanzada orientada al análisis de datos, arquitecturas modernas, business intelligence, seguridad de la información y desarrollo de soluciones inteligentes.',
       period: '2026 - Presente',
@@ -61,8 +64,7 @@ export class Academic {
         'Estructuras de Datos',
         'Análisis Matemático',
         'Herramientas de Análisis'
-      ],
-      image: 'assets/images/academic/licenciatura.png'
+      ]
     }
   ];
 

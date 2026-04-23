@@ -9,11 +9,16 @@
                 Formación Académica
             </p>
 
-            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6" [class]="academic[currentAcademicIndex].color">
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 w-7xl"
+                [class]="academic[currentAcademicIndex].color">
                 {{ academic[currentAcademicIndex].title }}
             </h2>
 
-            <p class="text-lg text-slate-300 leading-relaxed mb-8">
+            <p class="text-slate-400 text-lg mb-6">
+                {{ academic[currentAcademicIndex].university }}
+            </p>
+
+            <p class="text-lg text-slate-300 leading-relaxed mb-8 w-5xl">
                 {{ academic[currentAcademicIndex].description }}
             </p>
 
