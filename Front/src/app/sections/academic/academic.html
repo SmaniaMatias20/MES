@@ -1,1 +1,69 @@
-<p>academic works!</p>
+<section id="academic" class="relative min-h-screen bg-slate-950 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-slate-950/80"></div>
+
+    <div class="relative z-10 min-h-screen max-w-7xl mx-auto px-4 md:px-6
+               grid md:grid-cols-2 items-center gap-8 md:gap-12 py-12">
+        <!-- Texto -->
+        <div>
+            <p class="text-sm uppercase tracking-[0.3em] text-emerald-400 mb-4">
+                Formación Académica
+            </p>
+
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6" [class]="academic[currentAcademicIndex].color">
+                {{ academic[currentAcademicIndex].title }}
+            </h2>
+
+            <p class="text-lg text-slate-300 leading-relaxed mb-8">
+                {{ academic[currentAcademicIndex].description }}
+            </p>
+
+            <p class="text-slate-500 mb-8">
+                {{ academic[currentAcademicIndex].period }}
+            </p>
+
+            <!-- Materias / tecnologías -->
+            <div class="flex flex-wrap gap-3 md:gap-4 w-7xl">
+                @for (subject of academic[currentAcademicIndex].subjects; track subject) {
+                <span class="px-4 py-2 rounded-xl bg-slate-800
+               text-slate-200 text-sm md:text-base">
+                    {{ subject }}
+                </span>
+                }
+            </div>
+        </div>
+
+        <!-- Visual -->
+        <!-- <div class="flex justify-center">
+            <div class="w-full max-w-xl h-[420px]
+                       rounded-3xl bg-slate-900
+                       border border-white/5 shadow-2xl
+                       flex items-center justify-center">
+                <img [src]="academic[currentAcademicIndex].image" [alt]="academic[currentAcademicIndex].title"
+                    class="w-full h-full object-cover rounded-3xl" />
+            </div>
+        </div> -->
+    </div>
+
+    <!-- Navigation -->
+    <div class="absolute inset-y-0 left-0 right-0 z-20 pointer-events-none">
+        <button (click)="prevAcademic()" class="pointer-events-auto absolute left-3 md:left-6 top-1/2 -translate-y-1/2
+                   h-10 w-10 md:h-12 md:w-12 rounded-full
+                   bg-white/5 backdrop-blur-sm
+                   border border-white/10
+                   hover:bg-white/10
+                   transition-all duration-300
+                   flex items-center justify-center">
+            <span class="material-icons text-slate-200">chevron_left</span>
+        </button>
+
+        <button (click)="nextAcademic()" class="pointer-events-auto absolute right-3 md:right-6 top-1/2 -translate-y-1/2
+                   h-10 w-10 md:h-12 md:w-12 rounded-full
+                   bg-white/5 backdrop-blur-sm
+                   border border-white/10
+                   hover:bg-white/10
+                   transition-all duration-300
+                   flex items-center justify-center">
+            <span class="material-icons text-slate-200">chevron_right</span>
+        </button>
+    </div>
+</section>

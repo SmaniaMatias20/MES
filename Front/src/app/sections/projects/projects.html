@@ -26,7 +26,7 @@
             </button>
 
             <!-- Technologies -->
-            <div class="flex flex-wrap gap-3 md:gap-4 mt-8">
+            <div class="flex flex-wrap gap-3 md:gap-4 mt-8 w-lg">
                 @for (tech of projects[currentIndex].technologies; track tech) {
                 <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 text-sm md:text-base">
                     {{ tech }}
@@ -99,6 +99,23 @@
                            h-72 md:h-72
                            object-cover rounded-3xl shadow-xl
                            md:rotate-[8deg]" />
+            </div>
+            }
+
+            <!-- Rentia -->
+            @if (projects[currentIndex].title === 'Rentia') {
+            <div class="relative h-[500px] flex items-center justify-center">
+
+                <img [src]="projects[currentIndex]?.images?.[1]" class="absolute right-120 w-64 h-80
+               object-cover rounded-3xl shadow-xl
+               rotate-[-10deg]" />
+
+                <img [src]="projects[currentIndex]?.images?.[0]" class="absolute z-10 w-[75%] h-[420px]
+               object-cover rounded-3xl shadow-2xl" />
+
+                <img [src]="projects[currentIndex]?.images?.[2]" class="absolute left-120 w-64 h-80
+               object-cover rounded-3xl shadow-xl
+               rotate-[10deg]" />
             </div>
             }
 

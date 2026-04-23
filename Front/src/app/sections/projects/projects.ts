@@ -48,6 +48,18 @@ export class Projects {
         'assets/images/projects/gestor/2.png',
         'assets/images/projects/gestor/3.png'
       ]
+    },
+    {
+      title: 'Rentia',
+      description: 'App web para la gestión de rentas de viviendas.',
+      color: 'text-emerald-400',
+      year: 2024,
+      technologies: ['Nginx', 'Angular', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
+      images: [
+        'assets/images/projects/rentia/1.png',
+        'assets/images/projects/rentia/2.png',
+        'assets/images/projects/rentia/3.png'
+      ]
     }
   ];
 
