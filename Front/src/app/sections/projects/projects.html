@@ -1,0 +1,134 @@
+<section id="proyectos" class="relative min-h-screen bg-slate-900 text-white overflow-hidden">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-slate-900/70"></div>
+
+    <!-- Contenido -->
+    <div class="relative z-10 min-h-screen max-w-7xl mx-auto px-4 md:px-6
+               grid md:grid-cols-2 items-center gap-8 md:gap-12
+               transition-all duration-500 ease-out py-12">
+
+        <!-- Texto -->
+        <div>
+            <p class="text-sm uppercase tracking-[0.3em] text-emerald-400 mb-4">
+                Proyecto destacado
+            </p>
+
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6" [class]="projects[currentIndex].color">
+                {{ projects[currentIndex].title }}
+            </h2>
+
+            <p class="text-base md:text-lg text-slate-300 leading-relaxed mb-8">
+                {{ projects[currentIndex].description }}
+            </p>
+
+            <button class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 transition">
+                Ver más
+            </button>
+
+            <!-- Technologies -->
+            <div class="flex flex-wrap gap-3 md:gap-4 mt-8">
+                @for (tech of projects[currentIndex].technologies; track tech) {
+                <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 text-sm md:text-base">
+                    {{ tech }}
+                </span>
+                }
+            </div>
+        </div>
+
+        <!-- Galería -->
+        <div>
+
+            <!-- Bucle Infinito -->
+            @if (projects[currentIndex].title === 'Bucle Infinito') {
+            <div class="relative flex flex-col md:flex-row justify-center items-center md:items-end
+                       gap-4 md:gap-0 h-auto md:h-[620px]">
+                <img [src]="projects[currentIndex]?.images?.[1]" alt="Mobile 1" class="w-40 h-[300px] md:w-60 md:h-[500px]
+                           object-cover rounded-[2rem] shadow-2xl
+                           border-4 border-slate-700
+                           md:rotate-[-8deg] md:translate-x-8" />
+
+                <img [src]="projects[currentIndex]?.images?.[0]" alt="Mobile 2" class="w-44 h-[340px] md:w-64 md:h-[560px]
+                           object-cover rounded-[2rem] shadow-2xl
+                           border-4 border-emerald-400 z-10" />
+
+                <img [src]="projects[currentIndex]?.images?.[2]" alt="Mobile 3" class="w-40 h-[300px] md:w-60 md:h-[500px]
+                           object-cover rounded-[2rem] shadow-2xl
+                           border-4 border-slate-700
+                           md:rotate-[8deg] md:-translate-x-8" />
+            </div>
+            }
+
+            <!-- Mes Cotizaciones -->
+            @if (projects[currentIndex].title === 'Mes Cotizaciones') {
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 h-auto md:h-[600px]">
+                <img [src]="projects[currentIndex]?.images?.[0]"
+                    class="w-full h-64 md:h-72 object-cover rounded-3xl shadow-xl" />
+
+                <img [src]="projects[currentIndex]?.images?.[1]"
+                    class="w-full h-64 md:h-72 object-cover rounded-3xl shadow-xl" />
+
+                <img [src]="projects[currentIndex]?.images?.[2]"
+                    class="w-full h-64 md:h-72 object-cover rounded-3xl shadow-xl" />
+
+                <img [src]="projects[currentIndex]?.images?.[3]"
+                    class="w-full h-64 md:h-72 object-cover rounded-3xl shadow-xl" />
+            </div>
+            }
+
+            <!-- Gestor de Dinero -->
+            @if (projects[currentIndex].title === 'Gestor de Dinero') {
+            <div class="relative h-auto md:h-[600px]
+                       flex flex-col md:flex-row
+                       items-center justify-center
+                       gap-4 md:gap-0">
+                <img [src]="projects[currentIndex]?.images?.[0]" class="relative md:absolute
+                           w-full md:w-[70%]
+                           h-72 md:h-[420px]
+                           object-cover rounded-3xl shadow-2xl z-10" />
+
+                <img [src]="projects[currentIndex]?.images?.[1]" class="relative md:absolute
+                           md:left-0 md:top-20
+                           w-full md:w-56
+                           h-72 md:h-72
+                           object-cover rounded-3xl shadow-xl
+                           md:rotate-[-8deg]" />
+
+                <img [src]="projects[currentIndex]?.images?.[2]" class="relative md:absolute
+                           md:right-0 md:bottom-20
+                           w-full md:w-56
+                           h-72 md:h-72
+                           object-cover rounded-3xl shadow-xl
+                           md:rotate-[8deg]" />
+            </div>
+            }
+
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="absolute inset-y-0 left-0 right-0 z-20 pointer-events-none">
+        <button (click)="prev()" class="pointer-events-auto absolute left-3 md:left-6 top-1/2 -translate-y-1/2
+                   h-10 w-10 md:h-12 md:w-12 rounded-full
+                   bg-white/5 backdrop-blur-sm
+                   border border-white/10
+                   hover:bg-white/10
+                   transition-all duration-300
+                   flex items-center justify-center">
+            <span class="material-icons text-slate-200 text-lg md:text-xl">
+                chevron_left
+            </span>
+        </button>
+
+        <button (click)="next()" class="pointer-events-auto absolute right-3 md:right-6 top-1/2 -translate-y-1/2
+                   h-10 w-10 md:h-12 md:w-12 rounded-full
+                   bg-white/5 backdrop-blur-sm
+                   border border-white/10
+                   hover:bg-white/10
+                   transition-all duration-300
+                   flex items-center justify-center">
+            <span class="material-icons text-slate-200 text-lg md:text-xl">
+                chevron_right
+            </span>
+        </button>
+    </div>
+</section>
